@@ -3,10 +3,14 @@ import React, { Component } from 'react';
 
 const getBlogData = async () => {
   const FB = new Facebook();
-  FB.setAccessToken("EAACEdEose0cBAC7gRBzS68Vy7FzIb3S49U0mnymRKIdnm1asZAYUjSlo7FXSczmSr3ZAxLGyGj6JqwZC17Jl8hZCDBhIuYdZCaYaQkWMK6EP6KiCqwnZB4n7LjLjdhsl5vHxtRiLOTFHYc3z9b0ZAgWUrd267xbj60UPRytVhZCSKioranPMhwjt7SMJdDvThLcZD");
-  const { data } = await FB.api('/625206280892267/feed', { fields: 'story, message, created_time, full_picture' })
-  console.log("SDAAAAAAAA")
-  console.log(data);
+  /* const res = await FB.api('oauth/access_token', {
+    client_id: '620668848313207',
+    client_secret: 'e5e1753113d4c566f3e76d05ba28289f',
+    grant_type: 'client_credentials',
+  }); */
+  
+  FB.setAccessToken("EAACEdEose0cBAKrQfzrJjXpoCpOzTH6eOZCZBGOHd0bXg1mYEdFDIPkpM3G6qZBE0LoKSn1IF1AZAAZAYggYHsTstnsmusDXoXdSu7aXSaYVr2vF5ZBU54jDMZABQwqZAeGAjUZBewAwKnK6y7s7g121AU8FATnaVLTZBxgyU5aYjoPJ35LD65vDIUWZBfEsdCFvxwZD");
+  const { data } = await FB.api('/625206280892267/feed', { fields: 'story, message, created_time, full_picture, permalink_url' })
   return data;
 }
 

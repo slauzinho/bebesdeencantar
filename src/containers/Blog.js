@@ -18,10 +18,17 @@ const CardMediaStyle = css`
 
 const CardStyle = css`
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 
 const GridItemStyle = css`
   padding: 1rem !important;
+`
+
+const CardActionStyle = css`
+  align-self: flex-end;
 `
 
 export default withRouteData(({ posts }) => (
@@ -31,6 +38,8 @@ export default withRouteData(({ posts }) => (
     {posts.map(post => (
       <Grid item xs={12} sm={6} alignItems={"stretch"} className={GridItemStyle}>
       <Card className={CardStyle}>
+      <div>
+
         <CardMedia
           image={post["full_picture"]}
           title={post.story}
@@ -39,14 +48,12 @@ export default withRouteData(({ posts }) => (
         <CardContent>
           <Typography component="p">{post.message}</Typography>
         </CardContent>
-        <CardActions>
-          <Button size="small" color="primary">
-            Share
+      </div>
+        <CardActions className={CardActionStyle}>
+          <Button size="small" color="primary" href={post['permalink_url']}>
+            Consultar
           </Button>
-          <Button size="small" color="primary">
-            Learn More
-          </Button>
-        </CardActions>
+        </CardActions> 
       </Card>
       </Grid>
     ))}

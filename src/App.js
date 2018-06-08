@@ -65,6 +65,8 @@ const Test = styled(AppBar)`
 
 const Title = styled("h1")`
   font-family: "Pacifico", cursive;
+  font-style: normal;
+  font-weight: normal;
   color: #272727;
 `;
 
