@@ -9,7 +9,7 @@ const getBlogData = async () => {
     grant_type: 'client_credentials',
   }); */
   
-  FB.setAccessToken("EAACEdEose0cBAKrQfzrJjXpoCpOzTH6eOZCZBGOHd0bXg1mYEdFDIPkpM3G6qZBE0LoKSn1IF1AZAAZAYggYHsTstnsmusDXoXdSu7aXSaYVr2vF5ZBU54jDMZABQwqZAeGAjUZBewAwKnK6y7s7g121AU8FATnaVLTZBxgyU5aYjoPJ35LD65vDIUWZBfEsdCFvxwZD");
+  FB.setAccessToken("EAACEdEose0cBAKoudnbz1TO7qLYNricu1BgA3c9ihaoC8ZBEXQPmoNTsNsJSEtqwI3W5PE5bfvwHmiV0Jt3vZC3zHZAk2JkHIY8CnAgzUFjWNdRCQbm4qbcrs3Ltn38oIrAKf9lTTrwrxsfhvAufDaYGNghdnDb8urHcfQ61IngeMWUrCLLSp0bAi5N2xEZD");
   const { data } = await FB.api('/625206280892267/feed', { fields: 'story, message, created_time, full_picture, permalink_url' })
   return data;
 }

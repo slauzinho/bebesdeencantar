@@ -60,7 +60,16 @@ const ReviewCard = props => {
             <Icon className={classes.icon}>star</Icon>
             <Icon className={classes.icon}>star</Icon>
           </Typography>
-          <Typography component="p">{props.children}</Typography>
+          <p
+            className={css`
+              text-align: center;
+              color: #525f7f;
+              font-weight: 400;
+              line-height: 22px;
+            `}
+          >
+            {props.children}
+          </p>
         </CardContent>
       </Card>
     </div>
