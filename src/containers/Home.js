@@ -52,7 +52,7 @@ const Reviews = styled("div")`
   padding: 5rem 2rem;
   @media (max-width: 630px) {
     flex-direction: column;
-    
+
     & > div {
       flex-direction: column;
       div:not(:last-child){
@@ -80,6 +80,10 @@ const ProductTypes = styled("div")`
     color: #ff6f96;
     text-align: center;
     font-size: 2rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0 32px;
   }
 `;
 
