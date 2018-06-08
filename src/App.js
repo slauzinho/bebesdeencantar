@@ -31,6 +31,7 @@ const toolBarStyle = css`
   align-items: center;
   margin-bottom: 5rem;
   background-color: #fafafa;
+  box-shadow: none !important;
 `;
 
 const navigationStyle = css`
