@@ -66,6 +66,8 @@ const Reviews = styled("div")`
 
 const ProductTypes = styled("div")`
   margin-top: 5rem;
+  margin-bottom: 6rem;
+
   p {
     color: #525f7f;
     text-align: center;
