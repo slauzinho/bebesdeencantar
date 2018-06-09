@@ -14,12 +14,11 @@ const ProductStyle = styled("div")`
   @media (max-width: 500px) {
     flex-wrap: wrap;
     justify-content: center;
-    padding: 1rem 1rem;
+    padding: 6rem 1rem;
     background-color: ${props => (props.reversed ? "#ffdfe8" : "white")};
 
     & > div {
       padding: 0 2rem;
-      margin-bottom: 5rem; 
       h2 {
         margin: 0;
       }
