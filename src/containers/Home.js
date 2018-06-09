@@ -21,6 +21,7 @@ import galleryData from "../assets/gallery";
 import ReviewCard from "../components/Card";
 import Gallery from "../components/Gallery";
 import Contact from '../components/Contact';
+import Products from '../components/Products';
 
 const Container = styled("div")`
   display: flex;
@@ -136,34 +137,9 @@ export default withSiteData(() => (
         <img src={headerLogo} alt="Header logo" width="100%" height="auto" />
       </Grid>
     </Grid>
-    <Reviews>
-      <div
-        className={css`
-          display: flex;
-          align-items: center;
-        `}
-      >
-        <ReviewCard avatarSrc={avatar1}>
-          Fiquei apaixonada. Profissionalismo incrível e uma dedicação
-          extraordinária. Tudo perfeito e apesar de complemente diferente do que
-          faziam, conseguiram ir ao encontro do que procurava e pedia.
-          Recomendo!
-        </ReviewCard>
-        <ReviewCard avatarSrc={avatar2}>
-          Muitas coisas bonitas não podem ser vistas ou tocadas, elas são
-          sentidas dentro do coração, num dia tão especial à minha maneira,
-          todos estes miminhos farão parte de lindas e doces memórias :) Todos
-          os artigos vieram conforme solicitado e estão todos muito lindos e com
-          muito gosto.
-        </ReviewCard>
-        <ReviewCard avatarSrc={avatar3}>
-          Profissionalismo, bom gosto, simpatia e atenção caracterizaram a nossa
-          encomenda. Top para quem está fora! Foi com grande admiração que
-          encontrámos a nossa encomenda de "encantar" já à nossa espera.
-          Obrigada a toda a equipa!
-        </ReviewCard>
-      </div>
-    </Reviews>
+
+    <Products />
+
     <ProductTypes>
       <Grid container spacing={8}>
         <Grid item xs={12} sm={4}>
@@ -200,6 +176,34 @@ export default withSiteData(() => (
         </Grid>
       </Grid>
     </ProductTypes>
+    <Reviews>
+      <div
+        className={css`
+          display: flex;
+          align-items: center;
+        `}
+      >
+        <ReviewCard avatarSrc={avatar1}>
+          Fiquei apaixonada. Profissionalismo incrível e uma dedicação
+          extraordinária. Tudo perfeito e apesar de complemente diferente do que
+          faziam, conseguiram ir ao encontro do que procurava e pedia.
+          Recomendo!
+        </ReviewCard>
+        <ReviewCard avatarSrc={avatar2}>
+          Muitas coisas bonitas não podem ser vistas ou tocadas, elas são
+          sentidas dentro do coração, num dia tão especial à minha maneira,
+          todos estes miminhos farão parte de lindas e doces memórias :) Todos
+          os artigos vieram conforme solicitado e estão todos muito lindos e com
+          muito gosto.
+        </ReviewCard>
+        <ReviewCard avatarSrc={avatar3}>
+          Profissionalismo, bom gosto, simpatia e atenção caracterizaram a nossa
+          encomenda. Top para quem está fora! Foi com grande admiração que
+          encontrámos a nossa encomenda de "encantar" já à nossa espera.
+          Obrigada a toda a equipa!
+        </ReviewCard>
+      </div>
+    </Reviews>
     <GalleryStyle>
       <Gallery tileData={galleryData} />
     </GalleryStyle>
