@@ -30,6 +30,10 @@ const Container = styled("div")`
   align-items: center;
   padding-left: 24px;
 
+  @media (max-width: 600px){
+    padding-right: 24px;
+  }
+
   p {
     color: #525f7f;
     font-weight: 400;

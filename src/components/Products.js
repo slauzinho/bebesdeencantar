@@ -5,6 +5,17 @@ import giftbox from "../assets/giftbox_animated.svg";
 import card from "../assets/card_animated.svg";
 import towel from "../assets/towel_animated.svg";
 
+const getSectionColor = (color) => {
+  switch(color) {
+    case 'pink':
+      return "#ffdfe8";
+    case 'blue':
+      return "#edecfb";
+    default:
+      return "white";
+  }
+}
+
 const ProductStyle = styled("div")`
   display: flex;
   flex-direction: ${props => (props.reversed ? "row-reverse" : "row")};
@@ -15,7 +26,7 @@ const ProductStyle = styled("div")`
     flex-wrap: wrap;
     justify-content: center;
     padding: 6rem 1rem;
-    background-color: ${props => (props.reversed ? "#ffdfe8" : "white")};
+    background-color: ${props => getSectionColor(props.color)};
 
     & > div {
       padding: 0 2rem;
@@ -59,7 +70,7 @@ const Products = () => (
         </p>
       </TextStyle>
     </ProductStyle>
-    <ProductStyle reversed>
+    <ProductStyle reversed color="pink">
       <img src={candle} alt="Velas" width="50%" height="auto" />
       <div
         className={css`
@@ -70,7 +81,7 @@ const Products = () => (
       >
         <h2>Velas</h2>
         <p>
-        Deserunt esse ad veniam eiusmod laborum minim tempor excepteur. Commodo deserunt ut officia qui occaecat magna dolore excepteur enim incididunt. Ex amet cupidatat ut reprehenderit laborum amet nostrud tempor mollit aute. Dolor in eiusmod sit Lorem amet enim sit non cillum aliquip minim sint. Amet pariatur do voluptate anim officia amet et occaecat reprehenderit. Ipsum duis magna fugiat ullamco occaecat ut ex minim esse excepteur commodo tempor exercitation occaecat. Ex anim laboris excepteur tempor commodo sit ex.
+          Vela artesanal disponiveis em diferentes modelos, quadrado ou redondo. Personalizadas com fita, punho em cordão de seda, cetim, anjinhos ou argolas em prata de lei com gravação.
         </p>
       </div>
     </ProductStyle>
@@ -89,7 +100,7 @@ const Products = () => (
         </p>
       </div>
     </ProductStyle>
-    <ProductStyle reversed>
+    <ProductStyle reversed color="blue">
       <img src={towel} alt="Velas" width="40%" height="auto" />
       <div
         className={css`

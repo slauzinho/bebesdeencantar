@@ -9,7 +9,7 @@ const getBlogData = async () => {
     grant_type: 'client_credentials',
   }); */
   
-  FB.setAccessToken("EAACEdEose0cBABlzLy22hNv3L3ojGiVcCpPZBUjqycqyn2vyLbPWE51cCYw7IZAZA0kGGst5S4loLrMTSjLsYWcnm7cEoGoPja6svrUBbkg1CBkZBc4JMP1JVKIjcEx9tivMRtGwTLpHX0VarWb7ZA9bbJWwPWmJZBUZAAF1ASp8MXZCYNIMwoe15LHIr1YvQpYZD");
+  FB.setAccessToken("EAACEdEose0cBAMYokxbGEKubnRStUY8JrPCWVft6Gqmk9oC0barmnf0qllUROCzHkeFN0sjBkbRkSdMjSlmATFHhWc7NXmZC2SrCXJCJHhnioDJyHbc0ZBVsEs4P9s7HfBOjJD9hotceICnWdrFE5L7m2SQN8MSAewrxtHRcY9xHYHtrtBgrOFMiQb9mWGGDZBQRQWhcAZDZD");
   const { data } = await FB.api('/625206280892267/feed', { fields: 'story, message, created_time, full_picture, permalink_url' })
   return data;
 }
@@ -61,7 +61,8 @@ export default {
           <Head>
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto:400,700" rel="stylesheet" />
+            {/* <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto:400,700" rel="stylesheet" /> */}
+            <link href="https://fonts.googleapis.com/css?family=Kanit:300,700|Pacifico" rel="stylesheet" />
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
             {renderMeta.styleTags}
             <title>Bebés de Encantar</title>

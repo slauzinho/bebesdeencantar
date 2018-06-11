@@ -1,4 +1,5 @@
 {
   "extends": "react-static/.babelrc",
-  "presets": ["env", "react", "flow"]
+  "presets": ["react", "flow", "env"],
+  "plugins": ["transform-class-properties"]
 }
