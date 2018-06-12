@@ -92,9 +92,17 @@ export default {
             />
             {/* <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto:400,700" rel="stylesheet" /> */}
             <link
-              href="https://fonts.googleapis.com/css?family=Kanit:300,700|Pacifico"
+              href="https://fonts.googleapis.com/css?family=Kanit:300|Pacifico"
               rel="stylesheet"
             />
+            <meta
+          name="description"
+          content="Este espaço destina-se a dar sugestões para Aniversários, Batizados, Comunhões, Crismas, e demais cerimónias festivas...ou simplesmente oferecer um presente exlusivo e original"
+        />
+        <meta
+          name="Keywords"
+          content="bebes bebés comprar batizado baptizado velas conchas artigos blog comunhão comunhao lembranças lemrancas caixinhas envelopes"
+        />
             {renderMeta.faviconsElements}
             <title>Bebés de Encantar</title>
           </Head>
