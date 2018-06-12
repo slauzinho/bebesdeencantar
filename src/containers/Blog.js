@@ -1,13 +1,12 @@
 import React from "react";
-import { withRouteData, Link } from "react-static";
-import { withStyles } from "@material-ui/core/styles";
+import { withRouteData } from "react-static";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import styled, { css } from "react-emotion";
+import { css } from "react-emotion";
 import Grid from '@material-ui/core/Grid';
 
 const CardMediaStyle = css`
@@ -34,7 +33,7 @@ const CardActionStyle = css`
 export default withRouteData(({ posts }) => (
 
 
-  <Grid container spacing={0} alignItems={"stretch"}>
+  <Grid container spacing={0} alignItems="stretch">
     {posts.map(post => (
       <Grid item xs={12} sm={6} className={GridItemStyle} key={posts["created_time"]}>
       <Card className={CardStyle}>

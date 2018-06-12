@@ -13,7 +13,7 @@ const getBlogData = async () => {
   }); */
 
   FB.setAccessToken(
-    "EAACEdEose0cBAN0gLZBuUIiZBJg0ZB6espMEoZARV8ajsXK1XXeqqBxYhyV3ZBv17hN2xGU9JzwaZBprvKksBzHTPoGzU1XsTZCUnqPnjuB74RR1VZBNTe9HyvaQCvfojBKcoPDgmVDlY6yXbwdZCWzfWe5G1QrXFkc8JUFqATRnQNK3hKsJCZBYFZBhZAJBZC0T7cQYZD"
+    "EAACEdEose0cBAGoW3RYd6zNYQxDQhw33valy2iZA1P00AuDgxfdLyFa88CEbD7YuX6BUWQSNJLH1lHu4SOvsdFHZAR7OpGtLYnWUon62BkyWUEIqNZA6ZBHgKIM2sZCxGSZArpwjLPWukW5P9NgqCpLVxit2vmGIgqoycoiLKxjDUdz3QRhXn90eYvXmsAaKq9MODTerYUqQZDZD"
   );
   const { data } = await FB.api("/625206280892267/feed", {
     fields: "story, message, created_time, full_picture, permalink_url"
@@ -41,7 +41,7 @@ export default {
   getSiteData: () => ({
     title: "React Static"
   }),
-  siteRoute: "https://www.bebesdeencantar.com",
+  siteRoot: process.env.HOST,
   getRoutes: async () => {
     const posts = await getBlogData();
     return [
