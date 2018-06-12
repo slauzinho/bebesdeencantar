@@ -41,7 +41,7 @@ export default {
   getSiteData: () => ({
     title: "React Static"
   }),
-  siteRoot: process.env.HOST,
+  siteRoot: 'https://www.bebesdeencantar.com',
   getRoutes: async () => {
     const posts = await getBlogData();
     return [
