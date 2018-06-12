@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled, { css } from "react-emotion";
 /* import Button from "@material-ui/core/Button"; */
 import contactImg from "../assets/contact.jpg"; 
@@ -104,13 +104,15 @@ const Contact = () => (
 
         <div>
           <input type="hidden" name="form-name" value="contact" />
+          <label htmlFor="name">
           <input type="text" placeholder="Full name" id="name" required />
-          <label htmlFor="name">Nome</label>
+          Nome</label>
         </div>
 
         <div>
+        <label htmlFor="email">
           <input type="email" placeholder="Email address" id="email" required />
-          <label htmlFor="email">Endereço Email</label>
+          Endereço Email</label>
         </div>
 
         <div

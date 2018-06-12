@@ -19,6 +19,8 @@ module.exports = {
   "parser": "babel-eslint",
   "rules": {
     "linebreak-style": 0,
+    "no-unused-expressions": 0,
+    "import/extensions": 0,
     "jsx-a11y/anchor-is-valid": [
       "error",
       {

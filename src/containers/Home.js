@@ -1,14 +1,8 @@
 import React from "react";
 import { withSiteData } from "react-static";
 import styled, { css } from "react-emotion";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 
-import avatar from "../assets/avatar.svg";
 import headerLogo from "../assets/header_img.png";
 import avatar1 from "../assets/54.jpg";
 import avatar2 from "../assets/81.jpg";
@@ -205,7 +199,7 @@ export default withSiteData(() => (
         <ReviewCard avatarSrc={avatar3}>
           Profissionalismo, bom gosto, simpatia e atenção caracterizaram a nossa
           encomenda. Top para quem está fora! Foi com grande admiração que
-          encontrámos a nossa encomenda de "encantar" já à nossa espera.
+          encontrámos a nossa encomenda de {"encantar"} já à nossa espera.
           Obrigada a toda a equipa!
         </ReviewCard>
       </div>

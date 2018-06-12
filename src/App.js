@@ -1,15 +1,11 @@
 import React from "react";
-import { Router, Link } from "react-static";
+import { Router } from "react-static";
 import { hot } from "react-hot-loader";
-import styled, { css, injectGlobal } from "react-emotion";
+import styled, { injectGlobal } from "react-emotion";
 import Routes from "react-static-routes";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Button from "@material-ui/core/Button";
 import Navigation from './components/Navigation';
 
-import logo from "./assets/logo.png";
 
 injectGlobal`
   * {

@@ -4,11 +4,6 @@ import styled, { css } from "react-emotion";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import Drawer from "@material-ui/core/Drawer";
-import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
 
 /* Images */
 import logo from "../assets/logo.png";
@@ -38,13 +33,6 @@ const navigationStyle = css`
     .MuiButton-outlined-45 {
       border: none !important;
     }
-  }
-`;
-
-const navigationMobileStyle = css`
-  width: 100%;
-  &:hover {
-    background-color: #ffdfe8;
   }
 `;
 
@@ -86,13 +74,13 @@ const Title = styled("h1")`
   color: #272727;
 `;
 
-class Navigation extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  renderDesktop() {
-    return (
+const Navigation = () => (
+  <AppBarStyled position="static" color="default">
+    <Toolbar className={toolBarStyle}>
+      <div className={toolBarLogo}>
+        <img src={logo} alt="Logo" />
+        <Title>Bebés de encantar</Title>
+      </div>
       <div className={navigationStyle}>
         <Button component={Link} exact to="/">
           Home
@@ -104,22 +92,8 @@ class Navigation extends React.Component {
           Contactos
         </Button>
       </div>
-    );
-  }
-
-  render() {
-    return (
-      <AppBarStyled position="static" color="default">
-        <Toolbar className={toolBarStyle}>
-          <div className={toolBarLogo}>
-            <img src={logo} alt="Logo" />
-            <Title>Bebés de encantar</Title>
-          </div>
-          {this.renderDesktop()}
-        </Toolbar>
-      </AppBarStyled>
-    );
-  }
-}
+    </Toolbar>
+  </AppBarStyled>
+);
 
 export default Navigation;

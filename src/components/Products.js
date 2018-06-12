@@ -5,16 +5,16 @@ import giftbox from "../assets/giftbox_animated.svg";
 import card from "../assets/card_animated.svg";
 import towel from "../assets/towel_animated.svg";
 
-const getSectionColor = (color) => {
-  switch(color) {
-    case 'pink':
+const getSectionColor = color => {
+  switch (color) {
+    case "pink":
       return "#ffdfe8";
-    case 'blue':
+    case "blue":
       return "#edecfb";
     default:
       return "white";
   }
-}
+};
 
 const ProductStyle = styled("div")`
   display: flex;
@@ -81,7 +81,9 @@ const Products = () => (
       >
         <h2>Velas</h2>
         <p>
-          Vela artesanal disponiveis em diferentes modelos, quadrado ou redondo. Personalizadas com fita, punho em cordão de seda, cetim, anjinhos ou argolas em prata de lei com gravação.
+          Vela artesanal disponiveis em diferentes modelos, quadrado ou redondo.
+          Personalizadas com fita, punho em cordão de seda, cetim, anjinhos ou
+          argolas em prata de lei com gravação.
         </p>
       </div>
     </ProductStyle>
@@ -96,7 +98,12 @@ const Products = () => (
       >
         <h2>Convites</h2>
         <p>
-          Adipisicing do veniam cillum culpa. Duis excepteur commodo enim aute ullamco incididunt elit eiusmod aliqua et culpa cillum commodo amet. Irure ut sit laboris qui sit sint in et. Anim nostrud velit et labore tempor do id laboris culpa id do tempor. Irure nulla cillum eiusmod id nulla ad qui consequat. Nulla fugiat tempor quis esse aliquip cupidatat laborum.
+          Adipisicing do veniam cillum culpa. Duis excepteur commodo enim aute
+          ullamco incididunt elit eiusmod aliqua et culpa cillum commodo amet.
+          Irure ut sit laboris qui sit sint in et. Anim nostrud velit et labore
+          tempor do id laboris culpa id do tempor. Irure nulla cillum eiusmod id
+          nulla ad qui consequat. Nulla fugiat tempor quis esse aliquip
+          cupidatat laborum.
         </p>
       </div>
     </ProductStyle>
@@ -111,7 +118,12 @@ const Products = () => (
       >
         <h2>Toalhas</h2>
         <p>
-Exercitation culpa nostrud veniam tempor ex laboris quis aliquip tempor laborum aute. Aliqua est irure qui aliquip et sunt reprehenderit eiusmod consequat eu minim reprehenderit anim elit. Nulla in tempor ullamco id labore consequat velit pariatur in velit non esse tempor. Nulla cupidatat consectetur veniam anim ut magna culpa.
+          Exercitation culpa nostrud veniam tempor ex laboris quis aliquip
+          tempor laborum aute. Aliqua est irure qui aliquip et sunt
+          reprehenderit eiusmod consequat eu minim reprehenderit anim elit.
+          Nulla in tempor ullamco id labore consequat velit pariatur in velit
+          non esse tempor. Nulla cupidatat consectetur veniam anim ut magna
+          culpa.
         </p>
       </div>
     </ProductStyle>

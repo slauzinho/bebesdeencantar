@@ -34,9 +34,9 @@ const CardActionStyle = css`
 export default withRouteData(({ posts }) => (
 
 
-  <Grid container spacing={0}>
+  <Grid container spacing={0} alignItems={"stretch"}>
     {posts.map(post => (
-      <Grid item xs={12} sm={6} alignItems={"stretch"} className={GridItemStyle}>
+      <Grid item xs={12} sm={6} className={GridItemStyle} key={posts["created_time"]}>
       <Card className={CardStyle}>
       <div>
 
