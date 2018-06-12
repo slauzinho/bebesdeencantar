@@ -1,10 +1,10 @@
-import vela from "./vela.jpg";
-import caixa from "./caixa.jpg";
-import lembrancas from "./lembrancas.jpg";
-import lembrancas2 from "./lembrancas2.jpg";
-import lembrancas3 from "./lembrancas3.jpg";
-import toalha from "./tolha.jpg";
-import convites from "./convites.jpg";
+import vela from "./vela11.jpg";
+import caixa from "./caixa11.jpg";
+import lembrancas from "./lembrancas11.jpg";
+import lembrancas2 from "./lembrancas21.jpg";
+import lembrancas3 from "./lembrancas31.jpg";
+import toalha from "./tolha11.jpg";
+import convites from "./convites11.jpg";
 
 const galleryData = [
   {
