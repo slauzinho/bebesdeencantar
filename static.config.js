@@ -19,6 +19,7 @@ export default {
   getSiteData: () => ({
     title: 'React Static',
   }),
+  siteRoute: 'https://www.bebesdeencantar.com',
   getRoutes: async () => {
     const posts = await getBlogData();
     return [
