@@ -98,7 +98,7 @@ const Contact = () => (
         data-netlify="true"
         data-netlify-honeypot="bot-field"
       >
-        <div>
+        <div id="contactos">
           <h2>Contacte-nos</h2>
         </div>
 

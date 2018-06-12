@@ -127,8 +127,8 @@ const ProductImgs = styled("div")`
 
 export default withSiteData(() => (
   <div>
-    <Grid container>
-      <Grid item xs={12} sm={6} alignItems="center">
+    <Grid container alignItems="center">
+      <Grid item xs={12} sm={6}>
         <Container>
           <h1>Os melhores produtos para o seu bébé.</h1>
           <p>
