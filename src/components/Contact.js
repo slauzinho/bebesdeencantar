@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "react-emotion";
+import styled from "styled-components";
 /* import Button from "@material-ui/core/Button"; */
 import contactImg from "../assets/contact.jpg"; 
 import Button from './Button';
@@ -89,6 +89,10 @@ const BookForm = styled("div")`
   }
 `;
 
+const MensagemStyle = styled.div`
+  margin-bottom: 1rem;
+`
+
 const Contact = () => (
   <Book>
     <BookForm>
@@ -115,13 +119,9 @@ const Contact = () => (
           Endereço Email</label>
         </div>
 
-        <div
-          className={css`
-            margin-bottom: 1rem;
-          `}
-        >
+        <MensagemStyle>
           <textarea name="message" placeholder="Mensagem..."/>
-        </div>
+        </MensagemStyle>
 
         <div>
           <Button

@@ -5,7 +5,7 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
-import { css } from "react-emotion";
+import styled from "styled-components";
 
 import avatar from "../assets/avatar.svg";
 
@@ -31,18 +31,25 @@ const styles = {
   }
 };
 
+const ParagraphStyle = styled.p`
+text-align: center;
+              color: #525f7f;
+              font-weight: 400;
+              line-height: 22px;
+`
+
+const CardContentStyled = styled(CardContent)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
 const ReviewCard = props => {
   const { classes, avatarSrc } = props;
   return (
     <div>
       <Card className={classes.card}>
-        <CardContent
-          className={css`
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-          `}
-        >
+        <CardContentStyled>
           <Avatar
             src={avatarSrc}
             alt="Avatar"
@@ -105,17 +112,10 @@ const ReviewCard = props => {
               />
             </svg>
           </Typography>
-          <p
-            className={css`
-              text-align: center;
-              color: #525f7f;
-              font-weight: 400;
-              line-height: 22px;
-            `}
-          >
+          <ParagraphStyle>
             {props.children}
-          </p>
-        </CardContent>
+          </ParagraphStyle>
+        </CardContentStyled>
       </Card>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "react-emotion";
+import styled from "styled-components";
 import candle from "../assets/candle_animated.svg";
 import giftbox from "../assets/giftbox_animated.svg";
 import card from "../assets/card_animated.svg";
@@ -57,6 +57,12 @@ const TextStyle = styled("div")`
   padding: 5rem;
 `;
 
+const TextContentStyle = styled.div`
+  display: flex;
+          flex-direction: column;
+          padding: 5rem;
+`;
+
 const Products = () => (
   <div>
     <ProductStyle>
@@ -72,30 +78,18 @@ const Products = () => (
     </ProductStyle>
     <ProductStyle reversed color="pink">
       <img src={candle} alt="Velas" width="50%" height="auto" />
-      <div
-        className={css`
-          display: flex;
-          flex-direction: column;
-          padding: 5rem;
-        `}
-      >
+      <TextContentStyle>
         <h2>Velas</h2>
         <p>
           Vela artesanal disponiveis em diferentes modelos, quadrado ou redondo.
           Personalizadas com fita, punho em cordão de seda, cetim, anjinhos ou
           argolas em prata de lei com gravação.
         </p>
-      </div>
+      </TextContentStyle>
     </ProductStyle>
     <ProductStyle>
       <img src={card} alt="Convites" width="25%" height="auto" />
-      <div
-        className={css`
-          display: flex;
-          flex-direction: column;
-          padding: 5rem;
-        `}
-      >
+      <TextContentStyle>
         <h2>Convites</h2>
         <p>
           Adipisicing do veniam cillum culpa. Duis excepteur commodo enim aute
@@ -105,17 +99,11 @@ const Products = () => (
           nulla ad qui consequat. Nulla fugiat tempor quis esse aliquip
           cupidatat laborum.
         </p>
-      </div>
+      </TextContentStyle>
     </ProductStyle>
     <ProductStyle reversed color="blue">
       <img src={towel} alt="Velas" width="40%" height="auto" />
-      <div
-        className={css`
-          display: flex;
-          flex-direction: column;
-          padding: 5rem;
-        `}
-      >
+      <TextContentStyle>
         <h2>Toalhas</h2>
         <p>
           Exercitation culpa nostrud veniam tempor ex laboris quis aliquip
@@ -125,7 +113,7 @@ const Products = () => (
           non esse tempor. Nulla cupidatat consectetur veniam anim ut magna
           culpa.
         </p>
-      </div>
+      </TextContentStyle>
     </ProductStyle>
   </div>
 );

@@ -2,7 +2,7 @@ import React from "react";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import { withStyles } from "@material-ui/core/styles";
-import { css } from "react-emotion";
+import styled from "styled-components";
 
 const styles = theme => ({
   root: {
@@ -21,7 +21,7 @@ const styles = theme => ({
   }
 });
 
-const GridListTileStyle = css`
+const GridListTileStyle = styled(GridListTile)`
   span {
     position: absolute;
     top: 50%;
@@ -84,14 +84,13 @@ const Gallery = props => {
   return (
     <GridList cellHeight={160} cols={3}>
       {tileData.map(tile => (
-        <GridListTile
+        <GridListTileStyle
           key={tile.img}
           cols={tile.cols || 1}
-          className={GridListTileStyle}
         >
           <img src={tile.img} alt={tile.title} />
           <span>{tile.title}</span>
-        </GridListTile>
+        </GridListTileStyle>
       ))}
     </GridList>
   );

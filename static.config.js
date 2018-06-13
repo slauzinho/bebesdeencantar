@@ -2,6 +2,10 @@
 import { Facebook } from "fb";
 import React, { Component } from "react";
 import ReactStaticFavicons from "@kuroku/react-static-favicons";
+import { ServerStyleSheet } from 'styled-components'
+import { SheetsRegistry } from 'react-jss/lib/jss';
+import JssProvider from 'react-jss/lib/JssProvider';
+import { createGenerateClassName } from '@material-ui/core/styles';
 import path from "path";
 
 const getBlogData = async () => {
@@ -13,7 +17,7 @@ const getBlogData = async () => {
   }); */
 
   FB.setAccessToken(
-    "EAACEdEose0cBAHt2mgO2M5HLorpsVkFDwwYw5PthXvrPI21sc9tK3DDYOaXsPngnb6XZB5jaPhsQfuhLW6XZBosRqjkAuYHl2c4Q4lkom3LSJaSc5E8ubZAKz9Xl3biJHrIvWigfABPyzIBsZAeZBCwpfCiITHEW1UWeR2i3TZBP0ydn3SgpFKeo7N7DvXzEsZD"
+    "EAACEdEose0cBAL98ZCdTz18o4ZCoIfINI9VSnuCcCBiIHz3u6rxZCnRiV5dZBegXwOeV9EZAgbNWO8ofkg7ajOIkY54NWmLobejceDTCuB5qZB0ZBNJKFMu7AyBQwLF6FkVHFFoThmaTwFIXYN27nd40tmTGL0FS3qW0CJZA5PMCDFQ5KcW6tbRfMDPuYVIZAZCutM8h3xlnT1BgZDZD"
   );
   const { data } = await FB.api("/625206280892267/feed", {
     fields: "story, message, created_time, full_picture, permalink_url"
@@ -73,9 +77,23 @@ export default {
       }
     ];
   },
-  renderToHtml: async (render, C, meta) => {
+  renderToHtml: async (render, Comp, meta) => {
+    const sheet = new ServerStyleSheet()
+
+    // test
+    const sheetsRegistry = new SheetsRegistry()
+    const generateClassName = createGenerateClassName()
+    
+    const html = render(
+      <JssProvider registry={sheetsRegistry} generateClassName={generateClassName}>
+        {sheet.collectStyles(<Comp />)}
+      </JssProvider>
+    );
+
     meta.faviconsElements = await reactStaticFavicons.render();
-    const html = render(<C />);
+    meta.styleTags = sheet.getStyleElement()
+    meta.jssStyles = sheetsRegistry.toString()
+
     return html;
   },
   Document: class CustomHtml extends Component {
@@ -104,9 +122,11 @@ export default {
           content="bebes bebés comprar batizado baptizado velas conchas artigos blog comunhão comunhao lembranças lemrancas caixinhas envelopes"
         />
             {renderMeta.faviconsElements}
+            {renderMeta.styleTags}
             <title>Bebés de Encantar</title>
           </Head>
           <Body>{children}</Body>
+          <style id="jss-server-side">{renderMeta.jssStyles}</style>
         </Html>
       );
     }

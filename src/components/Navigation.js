@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-static";
-import styled, { css } from "react-emotion";
+import styled, { css } from "styled-components";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
@@ -8,7 +8,7 @@ import Button from "@material-ui/core/Button";
 /* Images */
 import logo from "../assets/logo.png";
 
-const navigationStyle = css`
+const BavigationStyle = styled.div`
   a:not(:last-child) {
     margin-right: 2rem;
   }
@@ -36,7 +36,7 @@ const navigationStyle = css`
   }
 `;
 
-const toolBarStyle = css`
+const ToolBarStyle = styled(Toolbar)`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,7 +50,7 @@ const toolBarStyle = css`
   }
 `;
 
-const toolBarLogo = css`
+const ToolBarLogo = styled.div`
   display: flex;
   align-items: center;
   white-space: nowrap;
@@ -76,12 +76,12 @@ const Title = styled("h1")`
 
 const Navigation = () => (
   <AppBarStyled position="static" color="default">
-    <Toolbar className={toolBarStyle}>
-      <div className={toolBarLogo}>
+    <ToolBarStyle>
+      <ToolBarLogo>
         <img src={logo} alt="Logo" />
         <Title>Bebés de encantar</Title>
-      </div>
-      <div className={navigationStyle}>
+      </ToolBarLogo>
+      <BavigationStyle>
         <Button component={Link} exact to="/">
           Home
         </Button>
@@ -91,8 +91,8 @@ const Navigation = () => (
         <Button component={Link} exact to="/#contactos">
           Contactos
         </Button>
-      </div>
-    </Toolbar>
+      </BavigationStyle>
+    </ToolBarStyle>
   </AppBarStyled>
 );
 

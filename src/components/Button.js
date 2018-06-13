@@ -1,7 +1,7 @@
 import React from "react";
-import styled from "react-emotion";
+import styled from "styled-components";
 
-const ButtonStyle = styled("button")`
+const ButtonStyle = styled.button`
   white-space: nowrap;
   display: inline-block;
   height: 40px;

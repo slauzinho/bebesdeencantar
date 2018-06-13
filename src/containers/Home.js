@@ -1,6 +1,6 @@
 import React from "react";
 import { withSiteData } from "react-static";
-import styled, { css } from "react-emotion";
+import styled, { css } from "styled-components";
 import Grid from "@material-ui/core/Grid";
 
 import headerLogo from "../assets/header_img.png";
@@ -17,7 +17,7 @@ import Gallery from "../components/Gallery";
 import Contact from '../components/Contact';
 import Products from '../components/Products';
 
-const Container = styled("div")`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -43,7 +43,7 @@ const Container = styled("div")`
   }
 `;
 
-const Reviews = styled("div")`
+const Reviews = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-content: center;
@@ -62,7 +62,12 @@ const Reviews = styled("div")`
 
 `;
 
-const ProductTypes = styled("div")`
+const ReviewContainer = styled.div`
+  display: flex;
+          align-items: center;
+`
+
+const ProductTypes = styled.div`
   margin-top: 5rem;
   margin-bottom: 6rem;
 
@@ -88,17 +93,17 @@ const ProductTypes = styled("div")`
   }
 `;
 
-const GalleryStyle = styled("div")`
+const GalleryStyle = styled.div`
   /* background-color: #ffdfe8; */
   padding: 20px 32px;
   margin-top: 5rem;
 `;
 
-const ContactStyle = styled('div')`
+const ContactStyle = styled.div`
   margin: 2rem 0;
 `
 
-const ProductImgs = styled("div")`
+const ProductImgs = styled.div`
   width: 80px;
   height: 80px;
   position: relative;
@@ -177,12 +182,7 @@ export default withSiteData(() => (
       </Grid>
     </ProductTypes>
     <Reviews>
-      <div
-        className={css`
-          display: flex;
-          align-items: center;
-        `}
-      >
+      <ReviewContainer>
         <ReviewCard avatarSrc={avatar1}>
           Fiquei apaixonada. Profissionalismo incrível e uma dedicação
           extraordinária. Tudo perfeito e apesar de complemente diferente do que
@@ -202,7 +202,7 @@ export default withSiteData(() => (
           encontrámos a nossa encomenda de {"encantar"} já à nossa espera.
           Obrigada a toda a equipa!
         </ReviewCard>
-      </div>
+      </ReviewContainer>
     </Reviews>
     <GalleryStyle>
       <Gallery tileData={galleryData} />

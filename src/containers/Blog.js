@@ -6,27 +6,27 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import { css } from "react-emotion";
+import styled from "styled-components";
 import Grid from '@material-ui/core/Grid';
 
-const CardMediaStyle = css`
+const CardMediaStyle = styled(CardMedia)`
   height: 15rem;
   background-size: contain;
   margin-bottom: 4rem;
 `;
 
-const CardStyle = css`
+const CardStyle = styled(Card)`
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `
 
-const GridItemStyle = css`
+const GridItemStyle = styled(Grid)`
   padding: 1rem !important;
 `
 
-const CardActionStyle = css`
+const CardActionStyle = styled(CardActions)`
   align-self: flex-end;
 `
 
@@ -35,26 +35,25 @@ export default withRouteData(({ posts }) => (
 
   <Grid container spacing={0} alignItems="stretch">
     {posts.map(post => (
-      <Grid item xs={12} sm={6} className={GridItemStyle} key={posts["created_time"]}>
-      <Card className={CardStyle}>
+      <GridItemStyle item xs={12} sm={6} key={posts["created_time"]}>
+      <CardStyle>
       <div>
 
-        <CardMedia
+        <CardMediaStyle
           image={post["full_picture"]}
           title={post.story}
-          className={CardMediaStyle}
         />
         <CardContent>
           <Typography component="p">{post.message}</Typography>
         </CardContent>
       </div>
-        <CardActions className={CardActionStyle}>
+        <CardActionStyle>
           <Button size="small" color="primary" href={post['permalink_url']}>
             Consultar
           </Button>
-        </CardActions> 
-      </Card>
-      </Grid>
+        </CardActionStyle> 
+      </CardStyle>
+      </GridItemStyle>
     ))}
   </Grid>
 
