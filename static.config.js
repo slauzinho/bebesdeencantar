@@ -1,5 +1,4 @@
 /* eslint-disable */
-import { Facebook } from "fb";
 import React, { Component } from "react";
 import ReactStaticFavicons from "@kuroku/react-static-favicons";
 import { ServerStyleSheet } from 'styled-components'
@@ -8,22 +7,8 @@ import JssProvider from 'react-jss/lib/JssProvider';
 import { createGenerateClassName } from '@material-ui/core/styles';
 import path from "path";
 require('dotenv').config();
-const webpack = require('webpack');
+import webpack from 'webpack';
 
-const getBlogData = async () => {
-  const FB = new Facebook();
-  /* const res = await FB.api('oauth/access_token', {
-    client_id: '620668848313207',
-    client_secret: 'e5e1753113d4c566f3e76d05ba28289f',
-    grant_type: 'client_credentials',
-  }); */
-
-  FB.setAccessToken(process.env.FACEBOOK_KEY);
-  const { data } = await FB.api("/625206280892267/feed", {
-    fields: "story, message, created_time, full_picture, permalink_url"
-  });
-  return data;
-};
 
 const reactStaticFavicons = new ReactStaticFavicons({
   // string: directory where the image files are written
@@ -47,7 +32,6 @@ export default {
   }),
   siteRoot: 'https://www.bebesdeencantar.com',
   getRoutes: async () => {
-    const posts = await getBlogData();
     return [
       {
         path: "/",
@@ -60,16 +44,6 @@ export default {
       {
         path: "/blog",
         component: "src/containers/Blog",
-        getData: () => ({
-          posts
-        }),
-        children: posts.map(post => ({
-          path: `/post/${post.id}`,
-          component: "src/containers/Post",
-          getData: () => ({
-            post
-          })
-        }))
       },
       {
         is404: true,
