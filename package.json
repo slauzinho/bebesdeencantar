@@ -4,16 +4,19 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "react-static start",
+    "start": "concurrently \"react-static start\" \"yarn lambda-serve\"",
     "stage": "react-static build --staging",
     "build": "react-static build",
-    "serve": "serve dist -p 3000"
+    "serve": "serve dist -p 3000",
+    "lambda-serve": "netlify-lambda serve src/lambda-src"
   },
   "dependencies": {
     "@kuroku/react-static-favicons": "^0.0.7",
     "@material-ui/core": "^1.2.0",
     "@material-ui/icons": "^1.1.0",
+    "axios": "^0.18.0",
     "babel-preset-env": "^1.7.0",
+    "dotenv": "^6.0.0",
     "fb": "^2.0.0",
     "prop-types": "^15.6.1",
     "react": "^16.0.0",
@@ -26,9 +29,11 @@
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.0.0-beta.49",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "concurrently": "^3.5.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-react-tools": "1.x.x",
     "eslint-plugin-prettier": "^2.6.0",
+    "netlify-lambda": "^0.4.0",
     "serve": "^6.1.0"
   }
 }

@@ -7,6 +7,8 @@ import { SheetsRegistry } from 'react-jss/lib/jss';
 import JssProvider from 'react-jss/lib/JssProvider';
 import { createGenerateClassName } from '@material-ui/core/styles';
 import path from "path";
+require('dotenv').config();
+const webpack = require('webpack');
 
 const getBlogData = async () => {
   const FB = new Facebook();
@@ -16,9 +18,7 @@ const getBlogData = async () => {
     grant_type: 'client_credentials',
   }); */
 
-  FB.setAccessToken(
-    "EAACEdEose0cBAL98ZCdTz18o4ZCoIfINI9VSnuCcCBiIHz3u6rxZCnRiV5dZBegXwOeV9EZAgbNWO8ofkg7ajOIkY54NWmLobejceDTCuB5qZB0ZBNJKFMu7AyBQwLF6FkVHFFoThmaTwFIXYN27nd40tmTGL0FS3qW0CJZA5PMCDFQ5KcW6tbRfMDPuYVIZAZCutM8h3xlnT1BgZDZD"
-  );
+  FB.setAccessToken(process.env.FACEBOOK_KEY);
   const { data } = await FB.api("/625206280892267/feed", {
     fields: "story, message, created_time, full_picture, permalink_url"
   });
@@ -130,5 +130,13 @@ export default {
         </Html>
       );
     }
+  },
+
+  webpack: config => {
+    config.plugins.push(new webpack.DefinePlugin({
+      LAMBDA_ENDPOINT: JSON.stringify(process.env.LAMBDA_ENDPOINT),
+      FACEBOOK_KEY: JSON.stringify(process.env.FACEBOOK_KEY),
+    }))
+    return config
   }
 };

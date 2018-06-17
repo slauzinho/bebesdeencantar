@@ -30,9 +30,53 @@ const CardActionStyle = styled(CardActions)`
   align-self: flex-end;
 `
 
-export default withRouteData(({ posts }) => (
+export default class Blog extends React.Component {
+  state = {
+    posts: []
+  }
+  async componentDidMount() {
+    fetch(process.env.LAMBDA_ENDPOINT).then(res => {
+      return res.json()
+    }).then(data => {
+      this.setState({ posts: data })
+    })
+  }
+  render() {
+    const { posts } = this.state;
+    if (posts === []) {
+      return <div>loading</div>
+    }
+
+    return (
+      <Grid container spacing={0} alignItems="stretch">
+    {posts.map(post => (
+      <GridItemStyle item xs={12} sm={6} key={posts["created_time"]}>
+      <CardStyle>
+      <div>
+
+        <CardMediaStyle
+          image={post["full_picture"]}
+          title={post.story}
+        />
+        <CardContent>
+          <Typography component="p">{post.message}</Typography>
+        </CardContent>
+      </div>
+        <CardActionStyle>
+          <Button size="small" color="primary" href={post['permalink_url']}>
+            Consultar
+          </Button>
+        </CardActionStyle> 
+      </CardStyle>
+      </GridItemStyle>
+    ))}
+  </Grid>
+    )
+  }
+}
 
 
+/* export default withRouteData(({ posts }) => (
   <Grid container spacing={0} alignItems="stretch">
     {posts.map(post => (
       <GridItemStyle item xs={12} sm={6} key={posts["created_time"]}>
@@ -57,4 +101,4 @@ export default withRouteData(({ posts }) => (
     ))}
   </Grid>
 
-));
+)); */
