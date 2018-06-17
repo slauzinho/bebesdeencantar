@@ -35,7 +35,7 @@ export default class Blog extends React.Component {
     posts: []
   }
   async componentDidMount() {
-    fetch(process.env.LAMBDA_ENDPOINT).then(res => {
+    fetch(`${process.env.LAMBDA_ENDPOINT}posts`).then(res => {
       return res.json()
     }).then(data => {
       this.setState({ posts: data })
