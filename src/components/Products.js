@@ -68,11 +68,9 @@ const Products = () => (
     <ProductStyle>
       <img src={giftbox} alt="Caixas Baptizados" width="50%" height="auto" />
       <TextStyle>
-        <h2>Caixinhas</h2>
+        <h2>Caixas</h2>
         <p>
-          Caixa grande de Batismo com divisões para a roupinha, vela, concha,
-          toalha, pintada e decorada manualmente com aplicação de meias perolas,
-          moldura em madeira e personalizada com nome em marfinite.
+        Caixas em madeira de diferentes tamanhos e modelos, com ou sem divisórias para guardar as lembranças de Batizado dos bebés como vela, concha, toalha, roupinha, lembrançinhas, álbum, etc.
         </p>
       </TextStyle>
     </ProductStyle>
@@ -81,23 +79,17 @@ const Products = () => (
       <TextContentStyle>
         <h2>Velas</h2>
         <p>
-          Vela artesanal disponiveis em diferentes modelos, quadrado ou redondo.
-          Personalizadas com fita, punho em cordão de seda, cetim, anjinhos ou
-          argolas em prata de lei com gravação.
+        Velas artesanais com 30 centímetros de altura decoradas em três modelos: ovais, quadradas e redondas.
+Com possibilidade de colocação de argola em prata de lei com gravação personalizada
         </p>
       </TextContentStyle>
     </ProductStyle>
     <ProductStyle>
       <img src={card} alt="Convites" width="25%" height="auto" />
       <TextContentStyle>
-        <h2>Convites</h2>
+        <h2>Lembranças</h2>
         <p>
-          Adipisicing do veniam cillum culpa. Duis excepteur commodo enim aute
-          ullamco incididunt elit eiusmod aliqua et culpa cillum commodo amet.
-          Irure ut sit laboris qui sit sint in et. Anim nostrud velit et labore
-          tempor do id laboris culpa id do tempor. Irure nulla cillum eiusmod id
-          nulla ad qui consequat. Nulla fugiat tempor quis esse aliquip
-          cupidatat laborum.
+        Sugestões de lembranças para oferecer aos familiares e amigos no dia do Batizado ou Comunhão.
         </p>
       </TextContentStyle>
     </ProductStyle>
@@ -106,12 +98,8 @@ const Products = () => (
       <TextContentStyle>
         <h2>Toalhas</h2>
         <p>
-          Exercitation culpa nostrud veniam tempor ex laboris quis aliquip
-          tempor laborum aute. Aliqua est irure qui aliquip et sunt
-          reprehenderit eiusmod consequat eu minim reprehenderit anim elit.
-          Nulla in tempor ullamco id labore consequat velit pariatur in velit
-          non esse tempor. Nulla cupidatat consectetur veniam anim ut magna
-          culpa.
+        Toalhas 100% em tecido nobre o linho puro com bainhas abertas e aplicação de renda ou crochê, totalmente feitas e bordadas á mão, ou meio-linho bordadas á mão com aplicação de crochet/renda.
+Possibilidade de elaborar em Meio-Linho
         </p>
       </TextContentStyle>
     </ProductStyle>
