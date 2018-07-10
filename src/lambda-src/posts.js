@@ -14,35 +14,11 @@ exports.handler = function(event, context, callback) {
         callback(null, {
             statusCode,
             headers,
-            body: 'Let there be light!'
+            body: 'Error using the API'
         });
     }
 
     const path = `https://graph.facebook.com/v3.0/625206280892267/feed?fields=story%2Cmessage%2Ccreated_time%2Cfull_picture%2Cpermalink_url&access_token=${process.env.FACEBOOK_KEY}`
-
-    /* https.get(path, function(res) {
-
-        let body = '';
-        res.on('data', function(chunk) {
-            body += chunk;
-        });
-
-        res.on('error', function(error) {
-            callback(null, { statusCode: 500, body: '{"msg": "Error Reporting to Slack"}' });
-        });
-
-        res.on('end', function() {
-            const json = JSON.parse(body);
-            callback(null, {
-                statusCode,
-                headers,
-                body: JSON.stringify(json.data)
-            });
-        });
-    }).on('error', function(error) {
-        console.log(error);
-        callback(null, { statusCode: 500, body: '{"msg": "Error Reporting to Slack"}' });
-    }) */
 
     axios.get(path).then((res) => {
         const { data: {data}} = res
