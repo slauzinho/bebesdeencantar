@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Grid from '@material-ui/core/Grid';
-import { formatDistance } from 'date-fns';
+import { formatDistance, toDate } from 'date-fns';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import FacebookMobilePost from '../components/FacebookMobilePost';
-
 
 const CircleStyled = styled(CircularProgress)`
   color: #ff6f96 !important;
@@ -33,6 +32,7 @@ export default class Blog extends React.Component {
         <Grid container spacing={0} alignItems="stretch">
       {postsFiltered.map(post => (
         <GridItemStyle item xs={12} sm={6} key={posts["id"]}>
+        {console.log(toDate('2014-02-11T11:30:30'))}
         <FacebookMobilePost 
           meta={{
             ogUrl: "Bebes de Encantar", 
@@ -41,7 +41,7 @@ export default class Blog extends React.Component {
             ogImage: {url: post.full_picture}}
           }
           likes={post.likes.summary.total_count}
-          date={formatDistance(new Date(post["created_time"]), new Date())}
+          date={formatDistance(toDate(post["created_time"]), new Date())}
           link={post['permalink_url']}
       />
       </GridItemStyle>
