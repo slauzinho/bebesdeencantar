@@ -1254,7 +1254,7 @@ exports.handler = function (event, context, callback) {
         });
     }
 
-    var path = 'https://graph.facebook.com/v3.0/625206280892267/feed?fields=story%2Cmessage%2Ccreated_time%2Cfull_picture%2Cpermalink_url&access_token=' + process.env.FACEBOOK_KEY;
+    var path = 'https://graph.facebook.com/v3.0/625206280892267/feed?fields=message%2Ccreated_time%2Cfull_picture%2Cpermalink_url%2Clikes.limit(1).summary(true)&access_token=' + process.env.FACEBOOK_KEY;
 
     axios.get(path).then(function (res) {
         var data = res.data.data;
