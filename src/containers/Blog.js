@@ -32,7 +32,6 @@ export default class Blog extends React.Component {
         <Grid container spacing={0} alignItems="stretch">
       {postsFiltered.map(post => (
         <GridItemStyle item xs={12} sm={6} key={posts["id"]}>
-        {console.log(toDate('2014-02-11T11:30:30'))}
         <FacebookMobilePost 
           meta={{
             ogUrl: "Bebes de Encantar", 
