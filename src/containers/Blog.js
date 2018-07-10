@@ -1,42 +1,17 @@
 import React from "react";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
 import styled from "styled-components";
 import Grid from '@material-ui/core/Grid';
+import { formatDistance } from 'date-fns';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import FacebookMobilePost from '../components/FacebookMobilePost';
 
-const CardMediaStyle = styled(CardMedia)`
-  height: 15rem;
-  background-size: contain;
-  margin-bottom: 4rem;
-`;
 
-const CardStyle = styled(Card)`
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+const CircleStyled = styled(CircularProgress)`
+  color: #ff6f96 !important;
 `
 
 const GridItemStyle = styled(Grid)`
   padding: 1rem !important;
-`
-
-const CardActionStyle = styled(CardActions)`
-  align-self: flex-end;
-`
-
-const LoadingStyle = styled.div`
-  display: flex;
-  justify-content: center;
-`
-
-const CircleStyled = styled(CircularProgress)`
-  color: #ff6f96 !important;
 `
 
 export default class Blog extends React.Component {
@@ -52,34 +27,28 @@ export default class Blog extends React.Component {
   }
   render() {
     const { posts } = this.state;
-    
     if (posts) {
+      const postsFiltered = posts.filter(post => post['message'])
       return (
         <Grid container spacing={0} alignItems="stretch">
-      {posts.map(post => (
-        <GridItemStyle item xs={12} sm={6} key={posts["created_time"]}>
-        <CardStyle>
-        <div>
-  
-          <CardMediaStyle
-            image={post["full_picture"]}
-            title={post.story}
-          />
-          <CardContent>
-            <Typography component="p">{post.message}</Typography>
-          </CardContent>
-        </div>
-          <CardActionStyle>
-            <Button size="small" color="primary" href={post['permalink_url']}>
-              Consultar
-            </Button>
-          </CardActionStyle> 
-        </CardStyle>
-        </GridItemStyle>
+      {postsFiltered.map(post => (
+        <GridItemStyle item xs={12} sm={6} key={posts["id"]}>
+        <FacebookMobilePost 
+          meta={{
+            ogUrl: "Bebes de Encantar", 
+            ogTitle: "", 
+            ogDescription: post.message, 
+            ogImage: {url: post.full_picture}}
+          }
+          likes={post.likes.summary.total_count}
+          date={formatDistance(new Date(post["created_time"]), new Date())}
+          link={post['permalink_url']}
+      />
+      </GridItemStyle>
       ))}
     </Grid>
       )
     }
-   return <LoadingStyle><CircleStyled size={50} /></LoadingStyle>
+   return <CircleStyled size={50} />
   }
 }
