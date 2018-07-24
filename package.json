@@ -35,6 +35,6 @@
     "eslint-config-react-tools": "1.x.x",
     "eslint-plugin-prettier": "^2.6.0",
     "netlify-lambda": "^0.4.0",
-    "serve": "^6.1.0"
+    "serve": "^9.3.0"
   }
 }
