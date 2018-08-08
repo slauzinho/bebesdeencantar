@@ -98,7 +98,7 @@ export default {
             />
             <meta
               name="image"
-              content="https://www.bebesdeencantar.com/static/header_img.d754384e.png"
+              content="https://i.imgur.com/kaqXwFn.jpg"
             />
             {/* Schema.org for Google */}
             <meta itemProp="name" content="Bebés de Encantar" />
@@ -108,7 +108,7 @@ export default {
             />
             <meta
               itemProp="image"
-              content="https://www.bebesdeencantar.com/static/header_img.d754384e.png"
+              content="https://i.imgur.com/kaqXwFn.jpg"
             />
             {/* Open Graph general (Facebook, Pinterest & Google+) */}
             <meta name="og:title" content="Bebés de Encantar" />
