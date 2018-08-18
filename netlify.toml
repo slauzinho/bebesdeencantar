@@ -10,3 +10,5 @@
   [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
+    Content-Security-Policy = "default-src 'none'; object-src 'none'; img-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; report-uri https://1c2d762fff1f59d8efe7f471bcc6fcbe.report-uri.com/r/d/csp/enforce;"
+    X-Content-Type-Options = "nosniff"
