@@ -10,5 +10,5 @@
   [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
-    Content-Security-Policy = "base-uri 'none'; default-src 'self' data: https:; style-src 'self' https://fonts.googleapis.com ; script-src 'self' data: https: ; font-src 'self' data: https://fonts.gstatic.com; object-src 'none'; img-src 'self' data:; block-all-mixed-content; frame-ancestors 'self'; report-uri https://bebesdeencantar.report-uri.com/r/d/csp/wizard;"
+    Content-Security-Policy = "base-uri 'none'; default-src 'self' data: https:; style-src 'self' https://fonts.googleapis.com 'sha256-4jtYXIy1TDpPyiRuiWATjN5+EUs/23EaAjRMpik7IqM=' 'sha256-hkWf8tXoa9rVTglJWdMj1aHNH1sp+gGahjNwhBTtpyE=' 'sha256-EfFd5lIfuTtHTi3EnM0JdNllu4bUGKxyFHDzd5I0MFg=' 'sha256-hfM5m1b/4lK9yQMI641p1fGwvKK67e+i/wSaPQK82Sw=' 'sha256-kjRhK6d1nJJDiHmjZWn76DYoAsh7tlANy44NjT4CQD4='; script-src 'self' data: https: 'sha256-jDRUpYu5DrowOzW5cgeyEqVRZ/JEIOWsaAIlMqmuNfs=' 'sha256-EQS6P1hWxbVgVmakvsb0ACNnHJLx5gt5TiEV0bXyBLM='; font-src 'self' data: https://fonts.gstatic.com; object-src 'none'; img-src 'self' data:; block-all-mixed-content; frame-ancestors 'self'; report-uri https://bebesdeencantar.report-uri.com/r/d/csp/wizard;"
     X-Content-Type-Options = "nosniff"
