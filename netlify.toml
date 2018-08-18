@@ -10,5 +10,5 @@
   [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
-    Content-Security-Policy = "base-uri 'none'; default-src 'self' 'unsafe-inline' data:; style-src 'self' https://fonts.googleapis.com; object-src 'none'; img-src 'self'; script-src 'self' data: https:; font-src 'self' https:; object-src 'none'; img-src 'self'; block-all-mixed-content; report-uri https://bebesdeencantar.report-uri.com/r/d/csp/wizard;"
+    Content-Security-Policy = "base-uri 'none'; default-src 'self' 'unsafe-inline' data:; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; object-src 'none'; img-src 'self'; script-src 'self' data: https:; font-src 'self' https:; object-src 'none'; img-src 'self' data:; block-all-mixed-content; report-uri https://bebesdeencantar.report-uri.com/r/d/csp/wizard;"
     X-Content-Type-Options = "nosniff"
