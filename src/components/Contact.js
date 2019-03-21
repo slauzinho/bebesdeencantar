@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 /* import Button from "@material-ui/core/Button"; */
-import contactImg from "../assets/contact.jpg"; 
+import contactImg from '../assets/contact.jpg';
 import Button from './Button';
 
-const Book = styled("div")`
+const Book = styled('div')`
   background-image: linear-gradient(
       105deg,
       rgba(255, 223, 232, 0.9) 0%,
@@ -24,7 +24,7 @@ const Book = styled("div")`
   }
 `;
 
-const BookForm = styled("div")`
+const BookForm = styled('div')`
   width: 50%;
   padding: 2rem;
 
@@ -33,7 +33,7 @@ const BookForm = styled("div")`
   }
 
   h2 {
-    font-family: "Pacifico", cursive;
+    font-family: 'Pacifico', cursive;
     font-style: normal;
     font-weight: normal;
     color: #ff6f96;
@@ -53,8 +53,8 @@ const BookForm = styled("div")`
     display: block;
     transition: all 0.3s;
 
-     @media (max-width: 600px) {
-        width: 100%;
+    @media (max-width: 600px) {
+      width: 100%;
     }
 
     :focus {
@@ -91,7 +91,7 @@ const BookForm = styled("div")`
 
 const MensagemStyle = styled.div`
   margin-bottom: 1rem;
-`
+`;
 
 const Contact = () => (
   <Book>
@@ -100,7 +100,7 @@ const Contact = () => (
         name="contact"
         method="post"
         data-netlify="true"
-        data-netlify-honeypot="bot-field"
+        data-netlify-recaptcha="true"
       >
         <div id="contactos">
           <h2>Contacte-nos</h2>
@@ -109,26 +109,30 @@ const Contact = () => (
         <div>
           <input type="hidden" name="form-name" value="contact" />
           <label htmlFor="name">
-          <input type="text" placeholder="Full name" id="name" required />
-          Nome</label>
+            <input type="text" placeholder="Full name" id="name" required />
+            Nome
+          </label>
         </div>
 
         <div>
-        <label htmlFor="email">
-          <input type="email" placeholder="Email address" id="email" required />
-          Endereço Email</label>
+          <label htmlFor="email">
+            <input
+              type="email"
+              placeholder="Email address"
+              id="email"
+              required
+            />
+            Endereço Email
+          </label>
         </div>
 
         <MensagemStyle>
-          <textarea name="message" placeholder="Mensagem..."/>
+          <textarea name="message" placeholder="Mensagem..." />
         </MensagemStyle>
 
         <div>
-          <Button
-            color="blue"
-          >
-            Enviar
-          </Button>
+          <div data-netlify-recaptcha="true"></div>
+          <Button color="blue">Enviar</Button>
         </div>
       </form>
     </BookForm>

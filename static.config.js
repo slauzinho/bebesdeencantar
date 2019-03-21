@@ -29,7 +29,7 @@ export default {
   getSiteData: () => ({
     title: "React Static"
   }),
-  siteRoot: "https://www.bebesdeencantar.com",
+  siteRoot: "https://amazing-mirzakhani-035d27.netlify.com",
   getRoutes: async () => {
     return [
       {
