@@ -98,7 +98,7 @@ const Contact = () => (
     <BookForm>
       <form
         name="contact"
-        method="post"
+        method="POST"
         data-netlify="true"
         data-netlify-recaptcha="true"
       >
@@ -107,7 +107,6 @@ const Contact = () => (
         </div>
 
         <div>
-          <input type="hidden" name="contact" value="contact" />
           <label htmlFor="name">
             <input type="text" placeholder="Full name" id="name" required name="name"/>
             Nome
