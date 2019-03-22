@@ -107,9 +107,9 @@ const Contact = () => (
         </div>
 
         <div>
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="contact" value="contact" />
           <label htmlFor="name">
-            <input type="text" placeholder="Full name" id="name" required />
+            <input type="text" placeholder="Full name" id="name" required name="name"/>
             Nome
           </label>
         </div>
@@ -121,6 +121,7 @@ const Contact = () => (
               placeholder="Email address"
               id="email"
               required
+              name="email"
             />
             Endereço Email
           </label>
@@ -130,10 +131,9 @@ const Contact = () => (
           <textarea name="message" placeholder="Mensagem..." />
         </MensagemStyle>
 
-        <div>
-          <div data-netlify-recaptcha="true"></div>
+          <div data-netlify-recaptcha="true" />
           <Button color="blue">Enviar</Button>
-        </div>
+
       </form>
     </BookForm>
   </Book>
