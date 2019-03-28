@@ -102,19 +102,20 @@ const Contact = () => (
         data-netlify="true"
         data-netlify-recaptcha="true"
       >
+        <input type="hidden" name="form-name" value="contact" /> 
         <div id="contactos">
           <h2>Contacte-nos</h2>
         </div>
 
         <div>
-          <label htmlFor="name">
+          <label>
             <input type="text" placeholder="Full name" id="name" required name="name"/>
             Nome
           </label>
         </div>
 
         <div>
-          <label htmlFor="email">
+          <label>
             <input
               type="email"
               placeholder="Email address"
