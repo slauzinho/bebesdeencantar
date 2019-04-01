@@ -140,7 +140,9 @@ export default {
     config.plugins.push(
       new webpack.DefinePlugin({
         LAMBDA_ENDPOINT: JSON.stringify(process.env.LAMBDA_ENDPOINT),
-        FACEBOOK_KEY: JSON.stringify(process.env.FACEBOOK_KEY)
+        FACEBOOK_KEY: JSON.stringify(process.env.FACEBOOK_KEY),
+        SITE_RECAPTCHA_KEY: JSON.stringify(process.env.SITE_RECAPTCHA_KEY),
+        SITE_RECAPTCHA_SECRET: JSON.stringify(process.env.SITE_RECAPTCHA_SECRET),
       })
     );
     return config;

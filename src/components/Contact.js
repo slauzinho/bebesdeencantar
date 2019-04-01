@@ -1,8 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import ReCaptcha from 'react-google-recaptcha';
 /* import Button from "@material-ui/core/Button"; */
 import contactImg from '../assets/contact.jpg';
 import Button from './Button';
+
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+}
 
 const Book = styled('div')`
   background-image: linear-gradient(
@@ -93,50 +100,101 @@ const MensagemStyle = styled.div`
   margin-bottom: 1rem;
 `;
 
-const Contact = () => (
-  <Book>
-    <BookForm>
-      <form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        data-netlify-recaptcha="true"
-      >
-        <input type="hidden" name="form-name" value="contact" /> 
-        <div id="contactos">
-          <h2>Contacte-nos</h2>
-        </div>
+const recaptchaRef = React.createRef();
 
-        <div>
-          <label>
-            <input type="text" placeholder="Full name" id="name" required name="name"/>
-            Nome
-          </label>
-        </div>
+export default class Contact extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-        <div>
-          <label>
-            <input
-              type="email"
-              placeholder="Email address"
-              id="email"
-              required
-              name="email"
+  onComplete(value) {
+    this.setState({ recaptcha: value });
+  }
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  handleSubmit = e => {
+    const recaptchaValue = recaptchaRef.current.getValue();
+    e.preventDefault();
+    const form = e.target;
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        'g-recaptcha-response': recaptchaValue,
+        ...this.state,
+      }),
+    })
+      .then(() => window.location.reload(true))
+      .catch(error => alert(error));
+  };
+
+  render() {
+    return (
+      <Book>
+        <BookForm>
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-recaptcha="true"
+            onSubmit={this.handleSubmit}
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <div id="contactos">
+              <h2>Contacte-nos</h2>
+            </div>
+
+            <div>
+              <label>
+                <input
+                  type="text"
+                  placeholder="Full name"
+                  id="name"
+                  required
+                  name="name"
+                  onChange={this.handleChange}
+                />
+                Nome
+              </label>
+            </div>
+
+            <div>
+              <label>
+                <input
+                  type="email"
+                  placeholder="Email address"
+                  id="email"
+                  required
+                  name="email"
+                  onChange={this.handleChange}
+                />
+                Endereço Email
+              </label>
+            </div>
+
+            <MensagemStyle>
+              <textarea
+                name="message"
+                placeholder="Mensagem..."
+                onChange={this.handleChange}
+              />
+            </MensagemStyle>
+
+            <ReCaptcha
+              size="normal"
+              ref={recaptchaRef}
+              sitekey="6Lf_aJsUAAAAAPsMHgW8XAyrlO33Skl5PMvxQ8eo"
+              onChange={this.onComplete}
             />
-            Endereço Email
-          </label>
-        </div>
-
-        <MensagemStyle>
-          <textarea name="message" placeholder="Mensagem..." />
-        </MensagemStyle>
-
-          <div data-netlify-recaptcha="true" />
-          <Button color="blue">Enviar</Button>
-
-      </form>
-    </BookForm>
-  </Book>
-);
-
-export default Contact;
+            <Button color="blue">Enviar</Button>
+          </form>
+        </BookForm>
+      </Book>
+    );
+  }
+}
