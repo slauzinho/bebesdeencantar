@@ -29,7 +29,7 @@ export default {
   getSiteData: () => ({
     title: "React Static"
   }),
-  siteRoot: "https://amazing-mirzakhani-035d27.netlify.com",
+  siteRoot: "https://bebesdeencentar.netlify.com",
   getRoutes: async () => {
     return [
       {
@@ -117,7 +117,7 @@ export default {
               content="Este espaço destina-se a dar sugestões para Aniversários, Batizados, Comunhões, Crismas, e demais cerimónias festivas...ou simplesmente oferecer um presente exlusivo e original"
             />
             <meta name="og:image" content="https://i.imgur.com/kaqXwFn.jpg" />
-            <meta name="og:url" content="https://www.bebesdeencantar.com" />
+            <meta name="og:url" content="https://bebesdeencentar.netlify.com" />
             <meta name="og:site_name" content="Bebés de Encantar" />
             <meta name="og:locale" content="pt_PT" />
             <meta name="fb:admins" content={625206280892267} />
